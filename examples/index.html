@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery Key Bridge Example</title>
+		<script type="text/javascript" src="../assets/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="../jQuery-KeyBridge-0.1.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				/*
+					Everytime there is a keypress event, alert which
+					character it is.
+				*/
+				$('body').keypress(function(e) {
+					alert( String.fromCharCode( e.which ) );
+				});
+
+
+				/*
+					When we press the button, simulate a keypress
+					event for the 'w' character.
+				*/
+				$('#press-w').on('click', function() {
+					$('body').keyBridge('w');
+				});
+
+				$('#press-a').on('click', function() {
+					$('body').keyBridge('a');
+				});
+
+				$('#press-s').on('click', function() {
+					$('body').keyBridge('s');
+				});
+
+				$('#press-d').on('click', function() {
+					$('body').keyBridge('d');
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<input type="button" value="Press 'w'" id="press-w" />
+		<input type="button" value="Press 'a'" id="press-a" />
+		<input type="button" value="Press 's'" id="press-s" />
+		<input type="button" value="Press 'd'" id="press-d" />
+	</body>
+</html>
